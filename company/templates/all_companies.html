@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+    {% extends "master.html" %}
+
+    {% block title %}
+    Company Masterlist
+    {% endblock %}
+
+    {% block content %}
+
+    <p><a href="/">GO TO HOME</a></p>
+
+    <h1>Company Masterlist:</h1>
+
+    <ul>
+        {% for x in mycompanies %}
+            <li><a href="details/{{x.id}}">{{x.name}}</a></li>
+        {% endfor %}
+    </ul>
+    {% endblock %}
+</body>
+</html>
