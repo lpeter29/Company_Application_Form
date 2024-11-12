@@ -8,12 +8,65 @@
         {% endblock %}
 
         {% block content %}
-        <h1>My Company's Masterlist</h1>
 
-        <h3>Companies</h3>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f9;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+            }
+    
+            .container {
+                background-color: #ffffff;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                padding: 20px 30px;
+                width: 80%;
+                max-width: 600px;
+                text-align: center;
+                margin-top: 20px;
+            }
+    
+            h1 {
+                color: #333;
+                font-size: 2em;
+                margin-bottom: 20px;
+            }
+    
+            h3 {
+                color: #007bff;
+                font-size: 1.2em;
+                margin-bottom: 10px;
+            }
+    
+            p {
+                font-size: 1em;
+                color: #555;
+            }
+    
+            a {
+                color: #007bff;
+                text-decoration: none;
+                font-weight: bold;
+            }
+    
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
 
-        <p>Check out all our <a href="company/">companies</a></p>
+        <div class="container">
+            <h1>My Company's Masterlist</h1>
 
+            <h3>Companies</h3>
+
+            <p>Check out all our <a href="company/">companies</a></p>
+        </div>
         {% endblock %}
     </body>
 

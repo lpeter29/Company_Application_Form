@@ -1,23 +1,95 @@
+{% extends "master.html" %}
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Masterlist</title>
+</head>
+
 <body>
-    {% extends "master.html" %}
-
-    {% block title %}
-    Company Masterlist
-    {% endblock %}
-
     {% block content %}
+    <style>
+        /* General body styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-    <p><a href="/">GO TO HOME</a></p>
+        /* Container styling for the main content */
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px 30px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            margin-top: 20px;
+        }
 
-    <h1>Company Masterlist:</h1>
+        /* Header and link styling */
+        h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
 
-    <ul>
-        {% for x in mycompanies %}
-            <li><a href="details/{{x.id}}">{{x.name}}</a></li>
-        {% endfor %}
-    </ul>
+        p a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        p a:hover {
+            text-decoration: underline;
+        }
+
+        /* Styling the company list */
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        li {
+            background-color: #f9f9f9;
+            margin: 10px 0;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        a {
+            color: #101781;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: #007bff;
+        }
+    </style>
+
+    <div class="container">
+        <p><a href="/">GO TO HOME</a></p>
+        <h1>Company Masterlist</h1>
+
+        <a href="{% url 'add_company' %}" class="add-company-btn">Add New Company</a>
+
+        <ul>
+            {% for x in mycompanies %}
+                <li><a href="details/{{x.id}}">{{ x.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
     {% endblock %}
 </body>
 </html>

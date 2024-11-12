@@ -1,23 +1,89 @@
+{% extends "master.html" %}
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Masterlist</title>
+</head>
+
 <body>
-    {% extends "master.html" %}
-
-    {% block title %}
-    Details about {{ mycompany.name }}
-    {% endblock %}
-
     {% block content %}
-    
-    <h1>{{ mycompany.name }}</h1>
-    
-    <p><strong>Company Type:</strong> {{ mycompany.get_type_display }}</p>
-    <p><strong>Address:</strong> {{ mycompany.address }}</p>
-    <p><strong>City:</strong> {{ mycompany.city }}</p>
-    <p><strong>Region:</strong> {{ mycompany.get_region_display }}</p>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-    <p><a href="/company">Back to Company List</a></p>
+        .container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px 30px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            margin-top: 20px;
+        }
 
+        h1 {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+            font-size: 1em;
+            line-height: 1.6;
+        }
+
+        p strong {
+            color: #333;
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+
+    <div class="container">
+        <h1>{{ mycompany.name }}</h1>
+        
+        <p><strong>Company Type:</strong> {{ mycompany.get_type_display }}</p>
+        <p><strong>Address:</strong> {{ mycompany.address }}</p>
+        <p><strong>City:</strong> {{ mycompany.city }}</p>
+        <p><strong>Region:</strong> {{ mycompany.get_region_display }}</p>
+
+        <a href="/company" class="back-link">Back to Company List</a>
+    </div>
     {% endblock %}
 </body>
 </html>
