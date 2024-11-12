@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html>
-
 <body>
     {% extends "master.html" %}
+
     {% block title %}
-    Details about {{mymember.name}}
+    Details about {{ mycompany.name }}
     {% endblock %}
 
     {% block content %}
+    
+    <h1>{{ mycompany.name }}</h1>
+    
+    <p><strong>Company Type:</strong> {{ mycompany.get_type_display }}</p>
+    <p><strong>Address:</strong> {{ mycompany.address }}</p>
+    <p><strong>City:</strong> {{ mycompany.city }}</p>
+    <p><strong>Region:</strong> {{ mycompany.get_region_display }}</p>
 
-    <h1>{{mycompany.name}}</h1>
-
-    <p>Company Type: {{ mycompany.get_type_display }} </p>
-    <p>Address: {{mycompany.address}}</p>
-
-    <p>Back to <a href="/company">Company List</a></p>
+    <p><a href="/company">Back to Company List</a></p>
 
     {% endblock %}
 </body>
