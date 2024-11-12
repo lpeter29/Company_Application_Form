@@ -9,6 +9,7 @@
 
 <body>
     {% block content %}
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -23,30 +24,46 @@
 
         .container {
             background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px 30px;
-            width: 80%;
-            max-width: 600px;
-            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px 50px;
+            width: 90%;
+            max-width: 800px;
+            text-align: left;
             margin-top: 20px;
+            overflow: hidden;
         }
 
         h1 {
             color: #333;
-            font-size: 1.8em;
-            margin-bottom: 10px;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
         }
 
         p {
             color: #555;
-            font-size: 1em;
-            line-height: 1.6;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin: 10px 0;
         }
 
         p strong {
             color: #333;
             font-weight: bold;
+        }
+
+        .company-info {
+            margin-bottom: 30px;
+        }
+
+        .company-info p {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-left: 5px solid #007bff;
+            border-radius: 5px;
+            margin: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         a {
@@ -61,12 +78,14 @@
         .back-link {
             display: inline-block;
             margin-top: 20px;
-            padding: 10px 20px;
+            padding: 12px 25px;
             background-color: #007bff;
             color: #fff;
             border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
+            transition: background-color 0.3s ease;
+            text-align: center;
         }
 
         .back-link:hover {
@@ -74,13 +93,16 @@
         }
     </style>
 
+
     <div class="container">
         <h1>{{ mycompany.name }}</h1>
-        
-        <p><strong>Company Type:</strong> {{ mycompany.get_type_display }}</p>
-        <p><strong>Address:</strong> {{ mycompany.address }}</p>
-        <p><strong>City:</strong> {{ mycompany.city }}</p>
-        <p><strong>Region:</strong> {{ mycompany.get_region_display }}</p>
+
+        <div class="company-info">
+            <p><strong>Company Type:</strong> {{ mycompany.get_type_display }}</p>
+            <p><strong>Address:</strong> {{ mycompany.address }}</p>
+            <p><strong>City:</strong> {{ mycompany.city }}</p>
+            <p><strong>Region:</strong> {{ mycompany.get_region_display }}</p>
+        </div>
 
         <a href="/company" class="back-link">Back to Company List</a>
     </div>

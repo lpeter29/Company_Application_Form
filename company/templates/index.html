@@ -10,6 +10,7 @@
         {% block content %}
 
         <style>
+            /* General body styling */
             body {
                 font-family: Arial, sans-serif;
                 background-color: #f4f4f9;
@@ -21,42 +22,60 @@
                 min-height: 100vh;
             }
     
+            /* Main container styling */
             .container {
                 background-color: #ffffff;
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                padding: 20px 30px;
-                width: 80%;
-                max-width: 600px;
+                border-radius: 12px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                padding: 50px 40px; /* Increased padding for better spacing */
+                width: 90%; /* Larger width for more content space */
+                max-width: 900px; /* Max width set for consistency */
+                min-height: 70%; /* Ensuring the container height is larger */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
                 text-align: center;
-                margin-top: 20px;
             }
     
+            /* Header Styling */
             h1 {
                 color: #333;
-                font-size: 2em;
-                margin-bottom: 20px;
+                font-size: 2.8em; /* Larger font size for header */
+                margin-bottom: 25px;
             }
     
             h3 {
                 color: #007bff;
-                font-size: 1.2em;
-                margin-bottom: 10px;
+                font-size: 1.8em; /* Increased font size for subheading */
+                margin-bottom: 20px;
             }
     
+            /* Paragraph Styling */
             p {
-                font-size: 1em;
+                font-size: 1.3em; /* Increased font size for better readability */
                 color: #555;
+                margin-bottom: 30px;
             }
     
+            /* Link Styling */
             a {
                 color: #007bff;
                 text-decoration: none;
                 font-weight: bold;
+                font-size: 1.2em; /* Larger font size for links */
+                transition: color 0.3s ease;
             }
     
             a:hover {
+                color: #0056b3;
                 text-decoration: underline;
+            }
+    
+            /* Footer or extra spacing (if any) */
+            .footer {
+                margin-top: 30px;
+                font-size: 1em;
+                color: #777;
             }
         </style>
 
@@ -69,5 +88,4 @@
         </div>
         {% endblock %}
     </body>
-
 </html>

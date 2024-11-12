@@ -25,30 +25,38 @@
         /* Container styling for the main content */
         .container {
             background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px 30px;
-            width: 80%;
-            max-width: 600px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px 50px;
+            width: 90%;
+            max-width: 800px;
             text-align: center;
             margin-top: 20px;
+            overflow: hidden;
         }
 
-        /* Header and link styling */
+        /* Header styling */
         h1 {
             color: #333;
-            font-size: 2em;
+            font-size: 2.5em;
             margin-bottom: 20px;
         }
 
-        p a {
-            color: #007bff;
+        /* Add New Company Button */
+        .add-company-btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
             text-decoration: none;
             font-weight: bold;
+            margin-bottom: 20px;
+            transition: background-color 0.3s ease;
         }
 
-        p a:hover {
-            text-decoration: underline;
+        .add-company-btn:hover {
+            background-color: #0056b3;
         }
 
         /* Styling the company list */
@@ -61,23 +69,41 @@
         li {
             background-color: #f9f9f9;
             margin: 10px 0;
-            padding: 10px 15px;
+            padding: 15px 20px;
             border-radius: 5px;
             border: 1px solid #ddd;
             text-align: left;
+            transition: background-color 0.3s ease;
         }
 
-        a {
-            color: #101781;
+        li:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Styling for the individual company links */
+        li a {
+            color: #007bff;
             text-decoration: none;
             font-weight: bold;
         }
 
-        a:hover {
+        li a:hover {
+            text-decoration: underline;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        p a {
             color: #007bff;
+            font-weight: bold;
+        }
+
+        p a:hover {
+            text-decoration: underline;
         }
     </style>
-
     <div class="container">
         <p><a href="/">GO TO HOME</a></p>
         <h1>Company Masterlist</h1>

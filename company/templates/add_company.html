@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Add Company</title>
     <style>
+        /* General body styling */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f9;
@@ -15,42 +16,48 @@
             min-height: 100vh;
         }
 
+        /* Container styling */
         .container {
             background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px 50px;
             width: 100%;
-            max-width: 600px;
-            text-align: center;
+            max-width: 500px;
+            min-height: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: left;
         }
 
         h1 {
             color: #333;
-            font-size: 2em;
-            margin-bottom: 20px;
+            font-size: 2.3em; 
+            margin-bottom: 30px;
+            text-align: center;
         }
 
+        /* Form field styling */
         p {
-            font-size: 1.1em;
-            margin-bottom: 15px;
-            text-align: left;
+            font-size: 1em; /* Larger font size for better readability */
+            margin-bottom: 10px;
         }
 
         label {
             font-weight: bold;
-            display: block;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             color: #333;
+            display: block;
         }
 
         input, textarea, select {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
+            padding: 12px 15px;
+            margin-bottom: 5px;
             border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1em;
+            border-radius: 8px;
+            font-size: .8em;
             color: #333;
         }
 
@@ -62,40 +69,42 @@
             background-color: #f9f9f9;
         }
 
+        /* Button styling */
         button {
             background-color: #4CAF50;
             color: white;
-            padding: 10px 20px;
+            padding: 12px 20px;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             font-size: 1.2em;
             cursor: pointer;
             transition: background-color 0.3s;
+            width: 100%;
         }
 
         button:hover {
             background-color: #45a049;
         }
 
+        /* Link styling */
         .back-link {
-            display: block; 
-            margin-top: 20px; 
+            display: inline-block;
+            margin-top: 20px;
             color: #007bff;
             font-weight: bold;
             text-decoration: none;
-            text-align: center; 
+            text-align: center;
         }
 
         .back-link:hover {
             text-decoration: underline;
         }
-
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Add New Company</h1>
-        
+
         <form method="POST">
             {% csrf_token %}
             
@@ -153,7 +162,7 @@
             </p>
 
             <button type="submit">Save Company</button>
-            
+
             <a href="/company" class="back-link">Back to Company List</a>
         </form>
     </div>
