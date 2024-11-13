@@ -16,12 +16,12 @@ def company(request):
 
 def add_company(request):
     if request.method == 'POST':
-        form = CompanyForm(request.POST)  # Get the data from the form
-        if form.is_valid():  # Check if the form is valid
-            form.save()  # Save the company data to the database
-            return redirect('/company')  # Redirect to the master list page after saving
+        form = CompanyForm(request.POST)  
+        if form.is_valid():  
+            form.save()  
+            return redirect('/company') 
     else:
-        form = CompanyForm()  # If it's a GET request, display the empty form
+        form = CompanyForm() 
 
     return render(request, 'add_company.html', {'form': form})
 

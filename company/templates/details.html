@@ -1,5 +1,7 @@
 {% extends "master.html" %}
 
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +10,6 @@
 </head>
 
 <body>
-    {% block content %}
 
     <style>
         body {
@@ -27,7 +28,7 @@
             border-radius: 12px;
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
             padding: 40px 50px;
-            width: 90%;
+            width: 100%;
             max-width: 800px;
             text-align: left;
             margin-top: 20px;
@@ -106,6 +107,6 @@
 
         <a href="/company" class="back-link">Back to Company List</a>
     </div>
-    {% endblock %}
 </body>
 </html>
+{% endblock %}

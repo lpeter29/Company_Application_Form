@@ -1,5 +1,7 @@
 {% extends "master.html" %}
 
+{% block content %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +10,6 @@
 </head>
 
 <body>
-    {% block content %}
     <style>
         /* General body styling */
         body {
@@ -59,21 +60,28 @@
             background-color: #0056b3;
         }
 
-        /* Styling the company list */
+        /* Styling the company list with limited height */
         ul {
             list-style-type: none;
             padding: 0;
             margin: 20px 0;
+            max-height: 300px; /* Adjust height to limit to around 5 items */
+            overflow-y: auto;
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
         }
 
         li {
             background-color: #f9f9f9;
-            margin: 10px 0;
+            margin: 0;
             padding: 15px 20px;
-            border-radius: 5px;
-            border: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
             text-align: left;
             transition: background-color 0.3s ease;
+        }
+
+        li:last-child {
+            border-bottom: none; /* Remove border for last item */
         }
 
         li:hover {
@@ -104,8 +112,8 @@
             text-decoration: underline;
         }
     </style>
+
     <div class="container">
-        <p><a href="/">GO TO HOME</a></p>
         <h1>Company Masterlist</h1>
 
         <a href="{% url 'add_company' %}" class="add-company-btn">Add New Company</a>
@@ -115,7 +123,10 @@
                 <li><a href="details/{{x.id}}">{{ x.name }}</a></li>
             {% endfor %}
         </ul>
+
+        <p><a href="/">GO TO HOME</a></p>
+
     </div>
-    {% endblock %}
 </body>
 </html>
+{% endblock %}

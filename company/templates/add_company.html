@@ -1,82 +1,56 @@
+{% extends "master.html" %}
+
+{% block title %}Add New Company{% endblock %}
+
+{% block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Add Company</title>
     <style>
-        /* General body styling */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        /* Container styling */
         .container {
             background-color: #ffffff;
             border-radius: 12px;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-            padding: 40px 50px;
-            width: 100%;
-            max-width: 500px;
-            min-height: 80%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: left;
+            padding: 30px 40px;
+            width: 95%;
+            max-width: 700px;
+            margin: 20px auto;
+            overflow: hidden;
+            height: auto;
+            min-height: 500px;
         }
 
         h1 {
             color: #333;
-            font-size: 2.3em; 
-            margin-bottom: 30px;
+            font-size: 2em;
+            margin-bottom: 15px;
             text-align: center;
         }
 
-        /* Form field styling */
-        p {
-            font-size: 1em; /* Larger font size for better readability */
-            margin-bottom: 10px;
-        }
-
-        label {
-            font-weight: bold;
-            margin-bottom: 10px;
+        p, label {
+            font-size: 1em;
             color: #333;
-            display: block;
+            margin-bottom: 10px;
         }
 
         input, textarea, select {
             width: 100%;
-            padding: 12px 15px;
-            margin-bottom: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
             border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: .8em;
-            color: #333;
+            border-radius: 5px;
+            font-size: 1em;
         }
 
-        textarea {
-            resize: vertical;
-        }
-
-        select {
-            background-color: #f9f9f9;
-        }
-
-        /* Button styling */
         button {
             background-color: #4CAF50;
             color: white;
-            padding: 12px 20px;
+            padding: 12px;
             border: none;
             border-radius: 8px;
-            font-size: 1.2em;
+            font-size: 1em;
             cursor: pointer;
             transition: background-color 0.3s;
             width: 100%;
@@ -86,10 +60,9 @@
             background-color: #45a049;
         }
 
-        /* Link styling */
         .back-link {
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 10px;
             color: #007bff;
             font-weight: bold;
             text-decoration: none;
@@ -108,13 +81,11 @@
         <form method="POST">
             {% csrf_token %}
             
-            <!-- Company Name -->
             <p>
                 <label for="id_name">Name:</label>
                 <input type="text" name="name" id="id_name" maxlength="100" required>
             </p>
 
-            <!-- Company Type -->
             <p>
                 <label for="id_type">Type:</label>
                 <select name="type" id="id_type" required>
@@ -125,19 +96,16 @@
                 </select>
             </p>
 
-            <!-- Company Address -->
             <p>
                 <label for="id_address">Address:</label>
-                <textarea name="address" id="id_address" rows="4" maxlength="500" required></textarea>
+                <textarea name="address" id="id_address" rows="3" maxlength="500" required></textarea>
             </p>
 
-            <!-- City -->
             <p>
                 <label for="id_city">City:</label>
                 <input type="text" name="city" id="id_city" maxlength="50" required>
             </p>
 
-            <!-- Region -->
             <p>
                 <label for="id_region">Region:</label>
                 <select name="region" id="id_region" required>
@@ -168,3 +136,4 @@
     </div>
 </body>
 </html>
+{% endblock %}

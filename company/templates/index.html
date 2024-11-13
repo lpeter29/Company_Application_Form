@@ -1,16 +1,16 @@
+{% extends "master.html" %}
+
+{% block title %}
+Company Masterlist
+{% endblock %}
+
+{% block content %}
+
+
 <!DOCTYPE html>
 <html lang="en">
     <body>
-        {% extends "master.html" %}
-
-        {% block title %}
-        Company Masterlist
-        {% endblock %}
-
-        {% block content %}
-
         <style>
-            /* General body styling */
             body {
                 font-family: Arial, sans-serif;
                 background-color: #f4f4f9;
@@ -22,47 +22,37 @@
                 min-height: 100vh;
             }
     
-            /* Main container styling */
             .container {
                 background-color: #ffffff;
                 border-radius: 12px;
                 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                padding: 50px 40px; /* Increased padding for better spacing */
-                width: 90%; /* Larger width for more content space */
-                max-width: 900px; /* Max width set for consistency */
-                min-height: 70%; /* Ensuring the container height is larger */
+                padding: 50px 40px; 
+                width: 90%; 
+                max-width: 900px; 
+                min-height: 70%; 
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 text-align: center;
             }
     
-            /* Header Styling */
             h1 {
                 color: #333;
-                font-size: 2.8em; /* Larger font size for header */
+                font-size: 2.8em; 
                 margin-bottom: 25px;
             }
-    
-            h3 {
-                color: #007bff;
-                font-size: 1.8em; /* Increased font size for subheading */
-                margin-bottom: 20px;
-            }
-    
-            /* Paragraph Styling */
+        
             p {
-                font-size: 1.3em; /* Increased font size for better readability */
+                font-size: 1.3em; 
                 color: #555;
                 margin-bottom: 30px;
             }
     
-            /* Link Styling */
             a {
                 color: #007bff;
                 text-decoration: none;
                 font-weight: bold;
-                font-size: 1.2em; /* Larger font size for links */
+                font-size: 1.2em; 
                 transition: color 0.3s ease;
             }
     
@@ -70,22 +60,13 @@
                 color: #0056b3;
                 text-decoration: underline;
             }
-    
-            /* Footer or extra spacing (if any) */
-            .footer {
-                margin-top: 30px;
-                font-size: 1em;
-                color: #777;
-            }
         </style>
 
         <div class="container">
             <h1>My Company's Masterlist</h1>
 
-            <h3>Companies</h3>
-
             <p>Check out all our <a href="company/">companies</a></p>
         </div>
-        {% endblock %}
     </body>
 </html>
+{% endblock %}

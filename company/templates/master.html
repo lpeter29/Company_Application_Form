@@ -1,11 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>{% block title %} {% endblock %}</title>
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <style>
+        /* Resetting default margins and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body settings to allow full-height page layout */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Content wrapper takes remaining space, without centering */
+        .content-wrapper {
+            flex: 1;
+            padding: 20px; /* Optional padding to avoid content touching edges */
+        }
+
+        /* Footer styling, full width from left to right */
+        footer {
+            background-color: #333;
+            color: #ffffff;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.9em;
+            width: 100%;
+            position: relative;
+            left: 0;
+            bottom: 0;
+        }
+    </style>
 </head>
 <body>
-    {% block content %}
-    {% endblock %}
-    
+    <!-- Content wrapper -->
+    <div class="content-wrapper">
+        {% block content %}
+        <!-- Your main content will appear here, unaltered in size -->
+        {% endblock %}
+    </div>
+
+    <!-- Footer spanning the full width -->
+    <footer>
+        &copy; {{ current_year }} My Company. All rights reserved.
+    </footer>
 </body>
 </html>
