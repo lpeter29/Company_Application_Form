@@ -1,5 +1,7 @@
 {% extends "master.html" %}
 
+{% load static %}
+
 {% block content %}
 
 <!DOCTYPE html>
@@ -7,112 +9,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Company Masterlist</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'all_companies.css' %}">
 </head>
 
 <body>
-    <style>
-        /* General body styling */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        /* Container styling for the main content */
-        .container {
-            background-color: #ffffff;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-            padding: 40px 50px;
-            width: 90%;
-            max-width: 800px;
-            text-align: center;
-            margin-top: 20px;
-            overflow: hidden;
-        }
-
-        /* Header styling */
-        h1 {
-            color: #333;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-
-        /* Add New Company Button */
-        .add-company-btn {
-            display: inline-block;
-            background-color: #007bff;
-            color: #fff;
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-bottom: 20px;
-            transition: background-color 0.3s ease;
-        }
-
-        .add-company-btn:hover {
-            background-color: #0056b3;
-        }
-
-        /* Styling the company list with limited height */
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 20px 0;
-            max-height: 300px; /* Adjust height to limit to around 5 items */
-            overflow-y: auto;
-            border-top: 1px solid #ddd;
-            border-bottom: 1px solid #ddd;
-        }
-
-        li {
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 15px 20px;
-            border-bottom: 1px solid #ddd;
-            text-align: left;
-            transition: background-color 0.3s ease;
-        }
-
-        li:last-child {
-            border-bottom: none; /* Remove border for last item */
-        }
-
-        li:hover {
-            background-color: #f0f0f0;
-        }
-
-        /* Styling for the individual company links */
-        li a {
-            color: #007bff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        li a:hover {
-            text-decoration: underline;
-        }
-
-        p {
-            font-size: 1.2em;
-        }
-
-        p a {
-            color: #007bff;
-            font-weight: bold;
-        }
-
-        p a:hover {
-            text-decoration: underline;
-        }
-    </style>
-
     <div class="container">
         <h1>Company Masterlist</h1>
 

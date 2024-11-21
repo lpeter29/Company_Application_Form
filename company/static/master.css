@@ -1,0 +1,43 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.background {
+    background-color: #2a2525;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; 
+    overflow: hidden;
+}
+
+.background iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: cover; 
+    pointer-events: none; 
+}
+
+.content {
+    flex: 1; 
+    padding: 20px;
+}
+
+
+
+footer {
+    background-color: #333;
+    color: #e6dada;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+    width: 100%;
+}
