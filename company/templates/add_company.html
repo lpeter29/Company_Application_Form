@@ -12,65 +12,65 @@
     <link rel="stylesheet" type="text/css" href="{% static 'add_company.css' %}">
 </head>
 <body>
-    <div class="container">
-        <h1>Add New Company</h1>
+<div class="container">
+    <h1>Add New Company</h1>
 
-        <form method="POST">
-            {% csrf_token %}
-            
-            <p>
-                <label for="id_name">Name:</label>
-                <input type="text" name="name" id="id_name" maxlength="100" required>
-            </p>
+    <form method="POST">
+        {% csrf_token %}
+        
+        <p>
+            <label for="id_name">Name:</label>
+            <input type="text" name="name" id="id_name" maxlength="100" required>
+        </p>
 
-            <p>
-                <label for="id_type">Type:</label>
-                <select name="type" id="id_type" required>
-                    <option value="LLC">Limited Liability Company</option>
-                    <option value="CORP">Corporation</option>
-                    <option value="SOLE">Sole Proprietorship</option>
-                    <option value="PART">Partnership</option>
-                </select>
-            </p>
+        <p>
+            <label for="id_type">Type:</label>
+            <select name="type" id="id_type" required>
+                <option value="LLC">Limited Liability Company</option>
+                <option value="CORP">Corporation</option>
+                <option value="SOLE">Sole Proprietorship</option>
+                <option value="PART">Partnership</option>
+            </select>
+        </p>
 
-            <p>
-                <label for="id_address">Address:</label>
-                <textarea name="address" id="id_address" rows="3" maxlength="500" required></textarea>
-            </p>
+        <p>
+            <label for="id_address">Address:</label>
+            <textarea name="address" id="id_address" rows="3" maxlength="500" required></textarea>
+        </p>
 
-            <p>
-                <label for="id_city">City:</label>
-                <input type="text" name="city" id="id_city" maxlength="50" required>
-            </p>
+        <p>
+            <label for="id_city">City:</label>
+            <input type="text" name="city" id="id_city" maxlength="50" required>
+        </p>
 
-            <p>
-                <label for="id_region">Region:</label>
-                <select name="region" id="id_region" required>
-                    <option value="NCR">National Capital Region</option>
-                    <option value="CAR">Cordillera Administrative Region</option>
-                    <option value="Region I">Ilocos Region</option>
-                    <option value="Region II">Cagayan Valley</option>
-                    <option value="Region III">Central Luzon</option>
-                    <option value="Region IV-A">CALABARZON</option>
-                    <option value="Region IV-B">MIMAROPA Region</option>
-                    <option value="Region V">Bicol Region</option>
-                    <option value="Region VI">Western Visayas</option>
-                    <option value="Region VII">Central Visayas</option>
-                    <option value="Region VIII">Eastern Visayas</option>
-                    <option value="Region IX">Zamboanga Peninsula</option>
-                    <option value="Region X">Northern Mindanao</option>
-                    <option value="Region XI">Davao Region</option>
-                    <option value="Region XII">SOCCSKSARGEN</option>
-                    <option value="Region XIII">Caraga</option>
-                    <option value="BARMM">Bangsamoro Autonomous Region in Muslim Mindanao</option>
-                </select>
-            </p>
+        <p>
+            <label for="id_region">Region:</label>
+            <select name="region" id="id_region" required>
+                <option value="NCR">National Capital Region</option>
+                <option value="CAR">Cordillera Administrative Region</option>
+                <option value="Region I">Ilocos Region</option>
+                <option value="Region II">Cagayan Valley</option>
+                <option value="Region III">Central Luzon</option>
+                <option value="Region IV-A">CALABARZON</option>
+                <option value="Region IV-B">MIMAROPA Region</option>
+                <option value="Region V">Bicol Region</option>
+                <option value="Region VI">Western Visayas</option>
+                <option value="Region VII">Central Visayas</option>
+                <option value="Region VIII">Eastern Visayas</option>
+                <option value="Region IX">Zamboanga Peninsula</option>
+                <option value="Region X">Northern Mindanao</option>
+                <option value="Region XI">Davao Region</option>
+                <option value="Region XII">SOCCSKSARGEN</option>
+                <option value="Region XIII">Caraga</option>
+                <option value="BARMM">Bangsamoro Autonomous Region in Muslim Mindanao</option>
+            </select>
+        </p>
 
-            <button type="submit">Save Company</button>
+        <button type="submit">Save Company</button>
 
-            <a href="/company" class="back-link">Back to Company List</a>
-        </form>
-    </div>
+        <a href="/company" class="back-link">Back to Company List</a>
+    </form>
+</div>
 </body>
 </html>
 {% endblock %}
