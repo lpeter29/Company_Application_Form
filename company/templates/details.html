@@ -3,28 +3,35 @@
 {% load static %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'details.css' %}">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Company Masterlist</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'details.css' %}">
-</head>
+<div class="container">
+    <h1>{{ mycompany.name }}</h1>
 
-<body>
-    <div class="container">
-        <h1>{{ mycompany.name }}</h1>
-
-        <div class="company-info">
-            <p><strong>Company Type:</strong> {{ mycompany.get_type_display }}</p>
-            <p><strong>Address:</strong> {{ mycompany.address }}</p>
-            <p><strong>City:</strong> {{ mycompany.city }}</p>
-            <p><strong>Region:</strong> {{ mycompany.get_region_display }}</p>
+    <div class="company-info">
+        <div class="info-group">
+            <label>Company Type:</label>
+            <span>{{ mycompany.get_type_display }}</span>
+        </div>
+        
+        <div class="info-group">
+            <label>City:</label>
+            <span>{{ mycompany.city }}</span>
         </div>
 
+        <div class="info-group">
+            <label>Region:</label>
+            <span>{{ mycompany.get_region_display }}</span>
+        </div>
+
+        <div class="info-group full-width">
+            <label>Address:</label>
+            <span>{{ mycompany.address }}</span>
+        </div>
+    </div>
+
+    <div class="button-group">
         <a href="/company" class="back-link">Back to Company List</a>
     </div>
-</body>
-</html>
+</div>
 {% endblock %}

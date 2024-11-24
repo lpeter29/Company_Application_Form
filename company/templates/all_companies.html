@@ -3,30 +3,19 @@
 {% load static %}
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'all_companies.css' %}">
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Company Masterlist</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'all_companies.css' %}">
-</head>
+<div class="container">
+    <h1>Company Masterlist</h1>
 
-<body>
-    <div class="container">
-        <h1>Company Masterlist</h1>
+    <a href="{% url 'add_company' %}" class="add-company-btn">Add New Company</a>
 
-        <a href="{% url 'add_company' %}" class="add-company-btn">Add New Company</a>
+    <ul>
+        {% for x in mycompanies %}
+            <li><a href="details/{{x.id}}">{{ x.name }}</a></li>
+        {% endfor %}
+    </ul>
 
-        <ul>
-            {% for x in mycompanies %}
-                <li><a href="details/{{x.id}}">{{ x.name }}</a></li>
-            {% endfor %}
-        </ul>
-
-        <p><a href="/">GO TO HOME</a></p>
-
-    </div>
-</body>
-</html>
+    <p><a href="/">Back to Home</a></p>
+</div>
 {% endblock %}
